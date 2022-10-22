@@ -7,19 +7,29 @@
 # 1115566773322 -> []
 
 numbers = list(input('Задайте последовательность цифр: '))
+
 list_ = []
-new_list = []
 
 for i in numbers:
     i = int(i)
     list_.append(i)     
-print(list_)
 
-compare = list_[0]
 
-for j in list_:
-    if j != compare:
-        new_list.append(j)
-    else:
-        compare = j
-print(new_list)
+list_replay = []
+
+for i in list_:
+    replay = 0
+    for j in list_:
+        if j == i:
+            replay +=1
+    list_replay.append(replay)
+    
+
+single_item = []
+
+for i in range(len(list_replay)):
+    if list_replay[i] == 1:
+        single_item.append(list_[i])
+
+print(f'{list_} → {single_item}')
+
